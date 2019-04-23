@@ -1,3 +1,15 @@
 body {
   background-color: antiquewhite;
 }
+
+.btn {
+  cursor: pointer;
+}
+.normar {
+  color: black;
+}
+
+.mouseHover {
+  color: aquamarine;
+  transition: color 1s ease-in-out;
+}
