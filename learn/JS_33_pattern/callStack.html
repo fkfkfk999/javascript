@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Call Stack</title>
+    <!-- 
+        Call Stack : JS가 함수 실행을 핸들하는 방법 중 하나 
+        JS가 실행하는 함수는 스택위에 올린다.
+    -->
+    <script>
+        function printLog() {
+            console.log("로그를 입력합니다.");
+        }
+        function third() {
+            printLog();
+            console.log("third 실행");
+        }
+        function second() {
+            third();
+            console.log("second 실행");
+        }
+        function first() {
+            second();
+            //강제로 에러를 발생시켜 본다. 
+            throw Error("강제 에러를 발생 시켰습니다.");
+            console.log("first 실행");
+        }
+        first();
+        alert("");
+    </script>
+</head>
+
+<body>
+    <h1>Call Stack</h1>
+</body>
+
+</html>
