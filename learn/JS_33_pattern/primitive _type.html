@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Primitive Type</title>
+    <script>
+        /*
+            Primitive(원시적인,기초적인) type 즉 JS에서 사용되는 기본적인 자료타입
+            String는 문자열을 의미한다 '', "", ``안에 문자열을 넣음으로써 사용가능하다.
+            "'이런식으로 일치하지 않는 구분값을 쓰면 에러가 난다. ""밖에 문자열을 써도 에러가 난다.
+            Boolean은 ""빼고 true, false로 표현하면 되고 숫자, 소수또한 ""빼고 숫자만 입력하면 된다.
+            undefined는 정의가 되지 않은걸 의미하고 Null은 존재하지 않는걸로 정의된것을 의미한다.
+            NaN은 Not A Number을 의미한다. javascript를 이용하여 수학연산을 했는데 결과가 제대로 나오지 않는경우이다.
+        */
+        // "쌍따옴표를 출력하고 싶어 "를입력한다면 에러가 난다." 그럴땐 "앞에 \를 넣어주면 된다.
+        console.log("쌍따옴표를 출력하고 싶어 \"를입력한다면 에러가 난다.\"");
+        let undefinedvar;
+        console.log(undefinedvar == undefined);//이처럼 선언은 했지만 정의하지 않으면  undefined가 된다.
+        let num = 5;
+        console.log(typeof (num));//typeof를 이용해 해당 데이터의 타입을 알 수 있다.
+        console.log(num / 0); //이런 경우 무한대로 나누어지기 때문에 Infinity가 뜬다.
+        console.log("num" / num); //문자가 아닌 숫자를 나누기 때문에 결과값이 나오지 않아 NaN이 되어버린다.
+    </script>
+</head>
+
+<body>
+    <h1>Primitive Type</h1>
+</body>
+
+</html>
