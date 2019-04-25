@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Value Reference</title>
+    <script>
+        let num = 33;
+        let numCopy = num;
+
+        console.log(numCopy);
+
+        num = 88;
+        // num값을 변경했기 때문에 numCopy도 변경될 것 같지만 실행해보면 numCopy값은 그대로이다.
+        // 이렇게 해당 변수의 메모리가 아닌 값만 불러와 복사하는걸 call by value라고 한다.
+        console.log(numCopy);
+
+        let arr = [33, 88, "문자열"];
+        let arrCopy = arr;
+
+        console.log(arrCopy);
+        arr.push("추가된 문자열");
+        //반면 배열을 복사하고 난 뒤 배열에 데이터를 추가 할 경우 arrCopy값이 arr과 일치하는걸 알 수 있다.
+        //배열의 경우 값을 복사하는게 아니라 배열값으 0번째 값의 주소값을 복사하기 때문이다.
+        //이처럼 현재 할당된 메모리 즉 주소값을 전달하는 개념을 call by reference라고 한다.
+        console.log(arrCopy);
+        arrCopy.push("arrCopy에서 추가");
+        //주소가 같기 때문에 Copy된 변수에서 추가한 데이터가 arr을 출력했을때도 추가되어있다는걸 알 수 있다.
+        console.log(arr);
+
+        let obj = {
+            id: "fkfkfk9",
+            biz: "hsnSystem"
+        }
+        console.log(`객체를 카피하기 전 : ${obj.id}`);
+        let objCopy = obj;
+        objCopy.id = "fkfkfk999";
+        //객체 또한 배열과 마찬가지이다. 또 함수 또한 이와같은 방식으로 동작한다. 
+        console.log(`객체를 카피하여 id수정 후 : ${obj.id}`);
+    </script>
+</head>
+
+<body>
+    <h1>Value Reference</h1>
+</body>
+
+</html>
