@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Type Coercion</title>
+    <script>
+        /*
+            type coercion 즉 type conversion은 Js가 자동으로 해주는 형변환을 의미한다.
+        */
+        //true나 false는 bool값이기 때문에 이처럼 연산할 경우 에러가 나야하지만 JS는 일단 실행을 한다.
+        //그리고 결과는 1을 더한것과 같다 true를 1로 false를 0으로 자동 형변환하여 처리하기 때문이다.
+        console.log(33 + true);
+        console.log(33 + 1);
+        console.log(33 + false);
+        // 하지만 숫자를 문자와 더한다면  문자를 숫자로 변경해주는게 아닌 숫자가 문자로 변해 합쳐진다.
+        // 즉 숫자를 문자로 자동 형변환하여 처리하는 것이다.
+        console.log(33 + "3");
+        // 만약 더하는게 아니라면 문자열을 숫자로 형변환해준다. 
+        console.log(33 - "3");
+        // 문자열을 형변화했을때 연산이 불가능하다면 NaN이 된다.
+        console.log(33 - "one");
+        //만약 if문을 이용해 비교할 때 ==을 사용할 경우 아래 예제는 true가 된다. 자동 형변환을 통해 숫자로 변경시켜주기 때문
+        // 하지만 이런 형변환이 유효성을 떨어트린다면 ===을 사용하면 자동형변환을 막는다.
+        console.log("33" == 33);
+        console.log("33" === 33);
+        // 이 경우는 적용이 안되는데 뒤의 true는 형변환으로 1이 되어버리고 앞에 "true"도 NaN이 되어버린다.
+        console.log("true" == true);
+        console.log(parseInt("true"));
+        // 이를 이용해 형변환을 하지 않고 자동형변환 패턴을 이용할 수 있다. "" + 를 하여 숫자를 String로 변형한다던가
+        // *1 또는 -0을 하여 String타입으로 들어온 숫자를 int형태로 변경 할 수 있다.
+        console.log("" + 8 + 8);
+        console.log("33" * 1 + 5);
+    </script>
+</head>
+
+<body>
+    <h1>Type Coercion</h1>
+</body>
+
+</html>
