@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scpoe</title>
+    <script>
+      /*
+          Scope는 여기에 변수가 존재하는지 여부이다.
+          if (true) {
+            const str = "string";
+          }
+          console.log(str);
+          이 경우 에러가 발생하는데 이유는 str이 지역변수인데 지역 밖에서 호출했기 때문이다.
+      */
+
+      //이렇게  <script>태그 안 최상단에 선언된 변수는 global scope이다. 아마 전역변수 아닌가 싶다.
+      const global_str = "global_string";
+
+      function strPrint() {
+        console.log(global_str);
+        //함수안에서 선언한 변수는 local scope로 지역변수이다. 함수나 판단문, 반복문 안에서 선언된 변수는 그 안에서만 사용된다.
+        const local_str = "function_scope_stringstring";
+      }
+
+      strPrint();
+      if (true) {
+        var local_str = "if_scope_string";
+      }
+      //함수안에 변수만 있는경우 에러가 났었지만 if안에 var변수를 선언하면 실행이 된다.
+      //이유는 var타입은 scope를 무시하기 때문이다. 이는 var변수를 사용하면 안되는 이유중 하나이다.
+      console.log(local_str);
+    </script>
+  </head>
+  <body>
+    <h1>Scope</h1>
+  </body>
+</html>
