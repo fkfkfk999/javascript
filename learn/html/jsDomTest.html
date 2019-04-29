@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>javascript Dom Ex</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" />
     <script>
-        function titleChange() {
-            let title = document.getElementById("title");
-            title.innerHTML = "버튼과 함수를 통해 변경된 H1";
-            document.title = "동적 웹페이지";
-        }
+      function titleChange() {
+        let title = document.getElementById("title");
+        title.innerHTML = "버튼과 함수를 통해 변경된 H1";
+        document.title = "동적 웹페이지";
+      }
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1 id="title">테스트용 제목 입니다.</h1>
     <button onclick="titleChange()">클릭</button>
     <p id="test-str">테스트용 본문입니다.</p>
     <script src="../js/jsDomTest.js"></script>
-</body>
-
+  </body>
 </html>
