@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>table modal Ex</title>
+</head>
+
+<body>
+    <main class="contents">
+        <h1 class="pageTitle">Board</h1>
+        <div class="timeViewer">
+            <h2></h2>
+        </div>
+        <table class="boardTable">
+            <colgroup>
+                <col width="5%" />
+                <col width="13%" />
+                <col width="*%" />
+                <col width="10%" />
+                <col width="12%" />
+                <col width="13%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>선택</th>
+                    <th>카테고리</th>
+                    <th>제목</th>
+                    <th>이름</th>
+                    <th>날짜</th>
+                    <th>수정/삭제</th>
+                </tr>
+            </thead>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>유머</td>
+                <td>제목11111111111111111111111111111111111111111</td>
+                <td>fkfkfk9</td>
+                <td>2019-3-1</td>
+                <td>
+                    <input type="button" value="수정" class="modifyBtn"><input type="button" value="삭제" class="delBtn">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>스포츠</td>
+                <td>제목222222222222222222222222222222222222222</td>
+                <td>fkfkfk9</td>
+                <td>2019-2-1</td>
+                <td>
+                    <input type="button" value="수정" class="modifyBtn"><input type="button" value="삭제" class="delBtn">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>건강</td>
+                <td>제목3333333333333333333333333333333333333333</td>
+                <td>fkfkfk9</td>
+                <td>2019-1-1</td>
+                <td>
+                    <input type="button" value="수정" class="modifyBtn"><input type="button" value="삭제" class="delBtn">
+                </td>
+            </tr>
+        </table>
+    </main>
+    <div class="btn-box">
+        <input type="button" value="글쓰기" class="writeBtn"><input type="button" value="선택삭제" class="checkDelBtn">
+    </div>
+    <!-- 모달을 만들어줄 박스 -->
+    <div class="modalBox_write hidden">
+        <!-- 모달의 배경 스타일을 만들어줄 구간 -->
+        <div class="modalBox_write_body"></div>
+        <!-- 모달창에 들어갈 내용 -->
+        <div class="write_section">
+            <ul class="write-list">
+                <li class="write-item">
+                    <h1></h1>
+                </li>
+                <li class="write-item">
+                    <select id="write-category">
+                        <option value="humor">유머</option>
+                        <option value="game">게임</option>
+                        <option value="health">건강</option>
+                        <option value="sports">스포츠</option>
+                    </select>
+                </li>
+                <li class="write-item">
+                    <input type="text" id="write-title" placeholder="제목" />
+                </li>
+                <li class="write-item">
+                    <input type="text" id="write-writer" placeholder="작성자" />
+                </li>
+                <li class="write-item">
+                    <button id="modalWriteSubmitBtn" class="btn">✔️</button>
+                </li>
+                <li class="write-item">
+                    <button id="modalWriteCloseBtn" class="btn">❌</button>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

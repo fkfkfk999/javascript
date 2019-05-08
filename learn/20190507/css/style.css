@@ -1,0 +1,72 @@
+@import "reset.css";
+@import "writeModal.css";
+
+.contents{
+    margin: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pageTitle{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.boardTable{
+    text-align: center;
+    width: 80%;
+    border: 1px solid black;
+}
+
+.boardTable tr{
+    border-bottom: 1px solid black;
+}
+
+.boardTable tr td, .boardTable tr th{
+    
+    padding: 10px 10px;
+}
+.boardTable tr th{
+    font-weight: 600;
+    color: white;
+    background-color: rgb(12, 33, 77);
+    border-right: 1px solid white;
+}
+.boardTable tr td{
+    background-color: rgb(191, 211, 253);
+    border-right: 1px solid black;
+}
+
+.modifyBtn{
+    cursor: pointer;
+    padding: 5px 15px;
+    margin-right: 12px;
+    color: white;
+}
+.delBtn{
+    padding: 5px 15px;
+    cursor: pointer;    
+}
+
+.btn-box{
+    text-align: right;
+    margin-right: 12%;
+}
+
+.btn-box > input[type="button"]{
+    padding: 5px 15px;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.writeBtn, .modifyBtn{
+    background-color: rgb(41, 95, 211);
+    color: white;
+}
+.checkDelBtn, .delBtn{
+    background-color: rgb(94, 95, 97);
+    color: white;
+}
+

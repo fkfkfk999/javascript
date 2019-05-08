@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Test</title>
+    <style>
+        .btn {
+            all: unset;
+            background-color: rgb(8, 59, 107);
+            color: white;
+            padding: 10px 20px;
+            font-weight: 700;
+            font-size: 33px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .modalBox {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .modal_body {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .modal_section {
+            /* 해당 박스에 그림자 효과를 준다. */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            position: relative;
+            top: 0;
+            background-color: antiquewhite;
+            padding: 70px 133px;
+            text-align: center;
+            border-radius: 8px;
+            width: 18%;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="modalOpenBtn" class="btn">Modal</button>
+    <!-- 모달을 만들어줄 박스 -->
+    <div class="modalBox hidden">
+        <!-- 모달의 배경 스타일을 만들어줄 구간 -->
+        <div class="modal_body"></div>
+        <!-- 모달창에 들어갈 내용 -->
+        <div class="modal_section">
+            <h1>모달의 제목</h1>
+            <button id="modalCloseBtn" class="btn">❌</button>
+        </div>
+    </div>
+    <script>
+        const OPEN_BTN = document.querySelector("#modalOpenBtn");
+        const CLOSE_BTN = document.querySelector("#modalCloseBtn");
+        const MODAL = document.querySelector(".modalBox");
+        const MODAL_BODY = document.querySelector(".modal_body");
+        function closeModal_fn() {
+            MODAL.classList.add("hidden");
+        }
+        OPEN_BTN.addEventListener("click", function () {
+            MODAL.classList.remove("hidden");
+        });
+        CLOSE_BTN.addEventListener("click", closeModal_fn);
+        MODAL_BODY.addEventListener("click", closeModal_fn);
+    </script>
+</body>
+
+</html>
