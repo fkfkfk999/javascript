@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Expression VS Statement</title>
+    <script>
+        const fn_result = sum(13, 18);
+        function sum(num1, num2) {
+            return num1 + num2;
+        }
+        // sum(3, 8)이 Expression 이유는 value를 리턴하기 때문이다. 
+        let num = sum(3, 8);
+        console.log(num);
+        console.log(3 + 8);
+        console.log(11);
+
+        // Statement는 명령 혹은 지시이다.
+        // if(true)라는건 value로 저장할 수 없다. Expression은 가능하다.
+        // 판단문, 반복문은 Statement이다.
+        // let str = if (true) { };
+        //8번줄에서 함수를 호출하고 9번줄에서 함수를 정의하는대도 에러가 나지 않고
+        //결과값이 반환대 출력된다 이게 declaration이다. JS는 모든 declaration을 상단으로 가져온다.
+        console.log(fn_result);
+
+        // const fn_result2 = add(13, 18);
+        const add = (num1, num2) => num1 + num2;
+        console.log(add(3, 8));
+        // console.log(fn_result2);
+    </script>
+</head>
+
+<body>
+    <h1>Expression VS Statement</h1>
+</body>
+
+</html>
