@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IIFE, Modules and Namespaces</title>
+    <script>
+      /*
+            IIFE(Immediately-Invoked Function Expressions)
+            함수이고 자기자신을 일으키는 함수
+        */
+      //    이렇게 작성된 배열들은 사용자가 브라우저의 console창에서 데이터 변형이 가능해진다.
+      const arr = ["fkfkfk9", "hansystem", "유종현"];
+      console.log(arr);
+
+      (function() {
+        const secretArr = ["fkfkfk10", "hansystem2", "유종현3"];
+        console.log(secretArr);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <h1>IIFE, Modules and Namespaces</h1>
+    <!-- 타입 모듈을 적용하면 모듈로 인식한다. -->
+    <script type="module" src="modules1.js"></script>
+    <script type="module" src="modules2.js"></script>
+  </body>
+</html>
