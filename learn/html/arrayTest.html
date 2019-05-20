@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let arr = [{ id: 'id1', latitude: '', longitude: '' }, { id: 'id2', latitude: '', longitude: '' }, { id: 'id3', latitude: '', longitude: '' }];
+        console.log(arr);
+        // id와 위도 경도가 들어왔을때
+        let id = 'id2';
+        let latitude = '11';
+        let longitude = '21';
+        arr.forEach(arrVal => {
+            if (arrVal.id == id) {
+                arrVal.latitude = latitude;
+                arrVal.longitude = longitude;
+            }
+        });
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
