@@ -1,0 +1,8 @@
+.frm,
+.currentBox {
+  display: none;
+}
+
+.show {
+  display: block;
+}
