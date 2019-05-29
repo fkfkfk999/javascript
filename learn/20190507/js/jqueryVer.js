@@ -168,20 +168,10 @@ $(document).ready(function() {
 
   // 선택삭제 버튼 클릭 시
   $(".checkDelBtn").click(function() {
-    // modalWriteTable 게시판의 tbody안에서 input태그들을 받아온다.
-    const inputDataArr = modalWriteTable.getElementsByTagName("input");
-    // 받아온 input이 여러개이기 때문에 반복문을 사용해준다.
-    Array.from(inputDataArr).forEach(inputData => {
-      // input타입이 checkbox인 경우에만 작업을 계속한다.
-      if (inputData.type === "checkbox") {
-        // 체크박스가 체크되어 있는것만 작업을 한다.
-        if (inputData.checked) {
-          //체크박스의 부모인 td,td의 부모인 tr을 가져와 delObj를 생성한다.
-          const delObj = inputData.parentElement.parentElement;
-          // 해당 tr을 삭제시킨다.
-          modalWriteTable.removeChild(delObj);
-        }
-      }
-    });
+    // input중 체크박스인데 checked상태인 것들만 가져와 그 부모의 부모인 tr을 삭제해준다.
+    $("input[type='checkbox']:checked")
+      .parent()
+      .parent()
+      .remove();
   });
 });
