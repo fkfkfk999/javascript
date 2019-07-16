@@ -1,0 +1,58 @@
+body > * {
+  all: unset;
+}
+
+ul,
+li {
+  all: unset;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+div.videoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  flex-flow: column;
+  position: relative;
+}
+
+video {
+  width: 800px;
+}
+
+div.videoController {
+  width: 700px;
+  background-color: #5b5653;
+  opacity: 0.5;
+  color: #e9c4e4;
+  position: absolute;
+  bottom: 30px;
+}
+
+ul.controller-item_list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-size: 20 px;
+}
+
+li.controller-item {
+  margin: 0 30px 0 30px;
+}
+
+span#playConBtn {
+  margin-right: 30px;
+}
+
+li.controller-item span i {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
