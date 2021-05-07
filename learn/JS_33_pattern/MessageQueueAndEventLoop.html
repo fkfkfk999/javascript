@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Queue And Event Loop</title>
+    <!-- 
+        blocking, none blocking
+        js는 none blocking 언어이고 파이썬은 blocking 언어이다.
+        만약 JS가 blocking 언어였다면 유저는 input에 입력이 불가능 할 것이다.
+        blocking는 한가지 일을 처리후에 작업이 가능한데 fetch를 하기위해 유저입력을 막을 것이다.
+        JS에서도 blocking function이 있는데 alert()이다.
+        흔히 사용하는 alert()의 경우 사용하게 되면 사용자가 확인버튼을 누르기 전까지 blocking 된다.
+     -->
+    <script>
+      setTimeout(() => {
+        console.log("111");
+      }, 0);
+      console.log("222");
+      /*
+      위의 소스코드는 실행하면 111이 아닌 222부터 실행된다.
+      console.log(222)의 경우 stack영역에서 실행하게 된다.
+      반면 setTimeout는 우선 stack영역에서 실행하면 
+      브라우저에서 과리하는 WebAPI영역으로 이동되어 실행하게 된다.
+      setTimeout는 console.log(111)을 Queue영역에 넣는다.
+      여기서 Queue는 message queue를 의미하는데 web api에서 온 메세지를 의미한다.
+      JS의 경우 message queue의 데이터를 stack에 데이터가 없을때 호출한다.
+    */
+      console.log("333");
+      console.log("444");
+      console.log("555");
+      console.log("666");
+      console.log("777");
+      /*
+        위에 log를 몇개를 더 추가했는데 stack의 데이터부터 처리하기 때문에 결국 111은 마지막에 실행된다.
+        이렇게 web api에서 처리되는 fetch같은걸 처리할 때 stack영역에 모든게 처리되고 messsage queue가 처리 된다는 것을
+        모른다면 원하는 순서대로 실행되지 않는 코드에 고통을 격을 수 있다.
+      */
+    </script>
+  </head>
+  <body></body>
+</html>
