@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set setTimeout</title>
+    <!-- 
+        setTimeout는 JS의 개념이 아닌 브라우저와 nodeJS의 개념이다.
+        주요 기능은 저번에 공부한대로 일정시간이 지난뒤 
+        해당 함수의 기능을 message queue에 붙여준다.
+        이후 스택이 비게되면 실행된다.        
+     -->
+    <script>
+      function printLogSt() {
+        console.log("Test STTTTT");
+      }
+      function printLogSi() {
+        console.log("Test SIIIII");
+      }
+      const st = setTimeout(printLogSt, 10000);
+      //   setTimeout(함수, 시간(ms))로 구성되어 있다.
+      clearTimeout(st);
+      //   만약 동작중에 setTimeout를 중지시키고 싶다면 clearTimeout를 사용하면 되는데
+      //   이를 사용하려면 setTimeout를 변수로 받아주어야 한다.
+
+      const si = setInterval(printLogSi, 3333);
+      //   setInterval은 setTimeout와 같은구조이고 다른점은 함수를 해당 시간마다 반복시킨다.
+      //   크롬에서는 1초이하로 설정해도 최소 1초에서 동작시킨다.
+      clearInterval(si);
+      // 중지시키는 방법도 같다.
+      const printLogRaf = () => {
+        console.log("Test raf");
+        requestAnimationFrame(printLogRaf);
+      };
+      requestAnimationFrame(printLogRaf);
+      //  requestAnimationFrame은 빠른시간안에 여러번 반복을 하는데
+      //  프레임 단위로 에니메이션 작업을 할 때 유용하다고 한다.
+    </script>
+  </head>
+  <body></body>
+</html>
